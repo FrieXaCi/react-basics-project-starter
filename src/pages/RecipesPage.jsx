@@ -4,8 +4,6 @@ import { data } from '../utils/data';
 
 let recipes = data.hits;
 
-console.log(recipes);
-
 export const RecipesPage = () => {
   return (
     <Container>
