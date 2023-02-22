@@ -1,5 +1,5 @@
 import { Heading } from '@chakra-ui/react';
 
 export const Title = ({ recipe }) => {
-  return <Heading>{recipe.recipe.label}</Heading>;
+  return <Heading fontSize='sm'>{recipe.recipe.label}</Heading>;
 };
