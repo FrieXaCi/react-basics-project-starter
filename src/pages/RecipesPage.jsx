@@ -1,16 +1,27 @@
 import { Heading, Box } from '@chakra-ui/react';
-import { RecipeBox } from '../components/RecipeBox';
+import { useState } from 'react';
+
+import { RecipeItem } from '../components/RecipeItem';
+import { SelectRecipe } from '../components/SelectRecipe';
 import { data } from '../utils/data';
 
 let recipes = data.hits;
 
+console.log(recipes);
+
 export const RecipesPage = () => {
+  const [selectedRecipe, setSelectedRecipe] = useState(recipes);
+
   return (
-    <Box h='auto' w='100vw' bg='orange.300'>
+    <Box h='auto' w='100%' bg='orange.300'>
       <Heading textAlign='center' mb='20px'>
-        Your Recipe App
+        Winc Recipe App
       </Heading>
-      <RecipeBox recipes={recipes} />
+      {selectedRecipe ? (
+        <RecipeItem recipes={selectedRecipe} />
+      ) : (
+        <SelectRecipe recipes={setSelectedRecipe} />
+      )}
     </Box>
   );
 };
