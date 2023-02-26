@@ -31,6 +31,9 @@ export const RecipeItem = ({ recipes }) => {
           borderRadius='25px'
           bg='yellow.300'
           key={recipe.recipe.label}
+          onClick={() => {
+            console.log(recipe.recipe.label);
+          }}
         >
           <RecipeImages recipe={recipe} />
           <RecipeTitle recipe={recipe} />

@@ -18,9 +18,9 @@ export const RecipesPage = () => {
         Winc Recipe App
       </Heading>
       {selectedRecipe ? (
-        <RecipeItem recipes={selectedRecipe} />
+        <RecipeItem recipes={selectedRecipe} onClick={setSelectedRecipe} />
       ) : (
-        <SelectRecipe recipes={setSelectedRecipe} />
+        <SelectRecipe recipes={setSelectedRecipe} onClick={setSelectedRecipe} />
       )}
     </Box>
   );
